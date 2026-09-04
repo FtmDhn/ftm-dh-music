@@ -66,7 +66,6 @@ Future updates will include:
 [Click here to experience Ftm-Dh Music](https://ftm-dh-music.vercel.app/)  
 [support link](https://ftmdhn.github.io/ftm-dh-music/)
 
-### Screenshot
 
 <img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/22f6431e-4163-49f6-860d-e99fda2ac592"/>
 
