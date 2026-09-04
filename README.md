@@ -1,4 +1,4 @@
-# Ftm-Dh Music 🎧
+# Ftm-Dh Music 
 
 > **Music isn't just something you play.  
 > It's something you experience.**
@@ -58,7 +58,6 @@ Future updates will include:
 - Personalized Libraries
 - Playlists
 - Recently Played
-- Shuffle & Repeat
 - Backend & Database
 
 ## 🎬 Preview
@@ -71,8 +70,9 @@ Future updates will include:
 
 ### Screenshot
 
-<img width="947" height="446" alt="Ftm-Dh Music Preview" src="https://github.com/user-attachments/assets/42a7c1e4-2ddf-4fac-8e7a-394f4b29412a" />
+<img width="947" height="446" alt="Ftm-Dh Music Preview" src="https://github.com/user-attachments/assets/42a7c1e4-2ddf-4fac-8e7a-394f4b29412a" />  
 
+<img width="945" height="448" alt="Image" src="https://github.com/user-attachments/assets/8cb52b7d-9925-47d6-ad06-82bb7d605c7c" />
 
 ## 🛠️ Built With
 
@@ -81,8 +81,43 @@ Future updates will include:
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Swiper](https://img.shields.io/badge/Swiper.js-6332F6?style=for-the-badge&logo=swiper&logoColor=white)
 
-## 🚀 Getting Started
+## Getting Started
 
+No build tools or dependencies required.
+
+1. **Clone the repository:**
 ```bash
-git clone https://github.com/FtmDhn/YOUR-REPOSITORY.git
-cd YOUR-REPOSITORY
+git clone https://github.com/FtmDhn/ftm-dh-music.git
+cd ftm-dh-music
+```
+2. **Setup:** Ensure the project structure remains intact (keep the img/ and js/ folders alongside index.html).
+
+3. **Run:** Simply open index.html in your preferred web browser.
+4. **Explore:** Find your favorite songs, hit play, and save the ones you love to your Library.
+
+## 👩‍💻 Developer
+
+This music player was passionately designed and engineered by:
+
+Fatemeh Dehghani
+
+Web Developer & Interactive UI Enthusiast
+
+Hi! I built this music player to explore interactive web experiences with JavaScript — from dynamic song controls and playlists to search, favorites, and smooth user interactions. Every part of the project was an opportunity to turn what I’ve learned into something functional and enjoyable to use.
+
+If you’re into building creative and interactive web experiences together, feel free to reach out!
+
+[![GitHub](https://img.shields.io/badge/GitHub-FtmDhn-181717?style=for-the-badge&logo=github)](https://github.com/FtmDhn)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Fatemeh%20Dehghani-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/FatemehDehghani)
+[![Instagram](https://img.shields.io/badge/Instagram-@ftm.dehgni-E4405F?style=for-the-badge&logo=instagram)](https://instagram.com/ftm.dehgni)
+
+---
+
+<div align="center">
+
+🎧 Find your sound. Press play.
+
+<sub>Built with JavaScript & Tailwind CSS.</sub>
+
+</div>
+
