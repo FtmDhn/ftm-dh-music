@@ -71,7 +71,8 @@ Future updates will include:
 
 ### Screenshot
 
-<img width="1536" alt="Ftm-Dh Music Preview" src="YOUR-PREVIEW-IMAGE-LINK" />
+<img width="947" height="446" alt="Ftm-Dh Music Preview" src="https://github.com/user-attachments/assets/42a7c1e4-2ddf-4fac-8e7a-394f4b29412a" />
+
 
 ## 🛠️ Built With
 
