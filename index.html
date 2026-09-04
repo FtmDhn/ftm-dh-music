@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+
+</head>
+
+<body class="bg-[#080808] text-white overflow-x-hidden min-h-screen ">
+
+    <!-- header  -->
+    <header class="h-20  px-5 md:px-8 lg:px-5 flex items-center justify-between overflow-hidden">
+
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-[#151515] border border-[#292929] flex items-center justify-center">
+                <span class="text-yellow-500 text-lg">♫</span>
+            </div>
+
+            <h2 class="text-[22px] md:text-[26px] lg:text-[19px] font-bold">
+                Ftm-Dh Music<span class="text-[#d8d8d8]">.in</span>
+            </h2>
+
+            <!-- Share -->
+            <button class="ml-1 hidden sm:block">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.6" y1="13.5" x2="15.4" y2="17.5"></line>
+                    <line x1="15.4" y1="6.5" x2="8.6" y2="10.5"></line>
+                </svg>
+            </button>
+        </div>
+
+
+        <div class="flex items-center gap-2 md:gap-4 lg:gap-5">
+            <!-- search btn-->
+            <button class="flex items-center gap-2" onclick="searchPage()">
+                <span class="hidden lg:block bg-[#3b3b3b] rounded-md px-2 py-0.5">Ctrl + K</span>
+                <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    class="cursor-pointer hover:stroke-olive-400 transition">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+                </svg>
+            </button>
+
+            <button
+                class="bg-white text-black rounded-full px-2 md:px-6 py-1 cursor-pointer text-base md:text-[17px] hover:bg-gray-200 transition">
+                Login
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- main  -->
+    <main class="flex justify-center  flex-wrap relative ">
+
+        <!-- aside  -->
+        <aside class="fixed z-90 bottom-0 left-0 h-[86.5vh] items-center justify-center hidden lg:flex">
+            <nav id="aside"
+                class="group *:pl-2 hover:bg-linear-to-r from-[#080808]/95  to-transparent  flex flex-col justify-center  gap-6  p-4  shadow-2xl transition-all duration-300">
+                <!-- home -->
+                <a href="#" class="flex items-center gap-4   text-white transition-colors duration-200">
+                    <div class="w-6 h-6 flex items-center justify-center shrink-0">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M3 10.5L12 3l9 7.5"></path>
+                            <path d="M5 9v11h14V9"></path>
+                            <path d="M9 20v-6h6v6"></path>
+                        </svg>
+                    </div>
+                    <span
+                        class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap font-medium text-sm  transition-all duration-300 group-hover:max-w-xs group-hover:opacity-100 group-hover:pr-3 hover:scale-110">
+                        Home
+                    </span>
+                </a>
+
+                <!-- search -->
+                <a href="#" onclick="searchPage()"
+                    class="flex items-center gap-4 text-gray-400 hover:text-white transition-colors duration-200">
+                    <div class="w-6 h-6 flex items-center justify-center shrink-0">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+                        </svg>
+                    </div>
+                    <span
+                        class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap hover:scale-110 font-medium text-sm transition-all duration-300 group-hover:max-w-xs group-hover:opacity-100 group-hover:pr-3">
+                        Search
+                    </span>
+                </a>
+
+                <!-- library -->
+                <a href="#" onclick="library()"
+                    class="flex items-center gap-4 text-gray-400 hover:text-white transition-colors duration-200">
+                    <div class="w-6 h-6 flex items-center justify-center shrink-0">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <line x1="5" y1="5" x2="5" y2="19"></line>
+                            <line x1="9" y1="5" x2="9" y2="19"></line>
+                            <line x1="13" y1="7" x2="13" y2="19"></line>
+                            <line x1="17" y1="5" x2="21" y2="19"></line>
+                        </svg>
+                    </div>
+                    <span
+                        class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap hover:scale-110 font-medium text-sm transition-all duration-300 group-hover:max-w-xs group-hover:opacity-100 group-hover:pr-3">
+                        Library
+                    </span>
+                </a>
+
+                <!-- profile -->
+                <a href="#"
+                    class="flex items-center gap-4 text-gray-400 hover:text-white transition-colors duration-200">
+                    <div class="w-6 h-6 flex items-center justify-center shrink-0">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.7">
+                            <circle cx="12" cy="8" r="3"></circle>
+                            <path d="M5 21c0-4 3-6 7-6s7 2 7 6"></path>
+                        </svg>
+                    </div>
+                    <span
+                        class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap hover:scale-110 font-medium text-sm transition-all duration-300 group-hover:max-w-xs group-hover:opacity-100 group-hover:pr-3">
+                        Profile
+                    </span>
+                </a>
+
+            </nav>
+        </aside>
+
+        <!-- aside 2  -->
+        <aside
+            class="bg-[#000000e6] fixed z-90 bottom-0 left-0 h-12.5 w-full items-center justify-center flex lg:hidden">
+
+            <nav id="aside2"
+                class="group *:pl-2 hover:bg-linear-to-r from-[#080808]/95  to-transparent  flex justify-center  gap-6  p-4  shadow-2xl transition-all duration-300">
+                <!-- Home -->
+                <a href="#" class="flex items-center gap-4   text-white transition-colors duration-200">
+                    <div class="w-6 h-6 flex items-center justify-center shrink-0">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M3 10.5L12 3l9 7.5"></path>
+                            <path d="M5 9v11h14V9"></path>
+                            <path d="M9 20v-6h6v6"></path>
+                        </svg>
+                    </div>
+                    <span
+                        class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap font-medium text-sm  transition-all duration-300 group-hover:max-w-xs group-hover:opacity-100 group-hover:pr-3 hover:scale-110">
+                        Home
+                    </span>
+                </a>
+
+                <!-- search -->
+                <a href="#" onclick="searchPage()"
+                    class="flex items-center gap-4 text-gray-400 hover:text-white transition-colors duration-200">
+                    <div class="w-6 h-6 flex items-center justify-center shrink-0">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+                        </svg>
+                    </div>
+                    <span
+                        class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap hover:scale-110 font-medium text-sm transition-all duration-300 group-hover:max-w-xs group-hover:opacity-100 group-hover:pr-3">
+                        Search
+                    </span>
+                </a>
+
+                <!-- library -->
+                <a href="#" onclick="library()"
+                    class="flex items-center gap-4 text-gray-400 hover:text-white transition-colors duration-200">
+                    <div class="w-6 h-6 flex items-center justify-center shrink-0">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <line x1="5" y1="5" x2="5" y2="19"></line>
+                            <line x1="9" y1="5" x2="9" y2="19"></line>
+                            <line x1="13" y1="7" x2="13" y2="19"></line>
+                            <line x1="17" y1="5" x2="21" y2="19"></line>
+                        </svg>
+                    </div>
+                    <span
+                        class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap hover:scale-110 font-medium text-sm transition-all duration-300 group-hover:max-w-xs group-hover:opacity-100 group-hover:pr-3">
+                        Library
+                    </span>
+                </a>
+
+                <!-- profile -->
+                <a href="#"
+                    class="flex items-center gap-4 text-gray-400 hover:text-white transition-colors duration-200">
+                    <div class="w-6 h-6 flex items-center justify-center shrink-0">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.7">
+                            <circle cx="12" cy="8" r="3"></circle>
+                            <path d="M5 21c0-4 3-6 7-6s7 2 7 6"></path>
+                        </svg>
+                    </div>
+                    <span
+                        class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap hover:scale-110 font-medium text-sm transition-all duration-300 group-hover:max-w-xs group-hover:opacity-100 group-hover:pr-3">
+                        Profile
+                    </span>
+                </a>
+
+            </nav>
+        </aside>
+
+        <!-- content -->
+        <section
+            class="content  transition-all duration-300  flex-1 pb-20 md:pb-0 2xl:container lg:ml-20 overflow-hidden fixed w-full top-20 left-[50%] translate-x-[-50%]">
+
+            <div class="pt-8 md:pt-7.5 px-6 md:px-8 lg:pl-6">
+                <p class="text-[#aab5c2] text-sm tracking-wide mb-2.5">
+                    HOME SCREEN SUGGESTIONS
+                </p>
+
+                <button class="bg-[#e8eef5] text-black rounded-full px-4 py-2 hover:bg-white transition">
+                    English
+                </button>
+            </div>
+
+            <!-- hero sec  -->
+            <div class="flex flex-col-reverse lg:grid lg:grid-cols-2  mt-8 md:mt-9">
+
+                <!-- left -->
+                <div class="rounded-tl-[25px] bg-black px-6 md:px-8 lg:pl-7.5 pt-10 md:pt-20 pb-10">
+
+                    <p class="text-[#a9a9a9] text-sm font-medium tracking-wide mb-2">
+                        TRENDING PLAYLIST
+                    </p>
+
+                    <h1
+                        class="text-[48px] sm:text-[58px] md:text-[65px] lg:text-[72px] leading-none font-bold tracking-tight mb-4">
+                        English Hits
+                    </h1>
+
+                    <p class="text-[#b7b7b7] text-sm mb-3">
+                        KICK BACK TO THE BEST NEW AND RECENT COVER
+                    </p>
+
+                    <button onclick="library()"
+                        class="bg-white cursor-pointer text-black lg:mb-14 rounded-full px-5 lg:px-6 py-3 lg:py-4 flex items-center gap-3 text-base font-bold hover:bg-gray-200 transition">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z"></path>
+                        </svg>
+                        EXPLORE PLAYLIST
+                    </button>
+                </div>
+
+                <!-- img  -->
+                <div
+                    class="w-full  lg:absolute lg:w-150 lg:h-92.5 lg:top-25 lg:left-112.5 xl:w-185 xl:h-102.5 xl:top-10 xl:left-135.5 overflow-hidden bg-black">
+                    <img src="img/group.png" alt="English Hits"
+                        class="w-full h-full object-cover object-center scale-120 lg:scale-100 mask-[linear-gradient(to_top,transparent,black_20%)]">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- all songs playlists -->
+        <section class="playlistss absolute top-[100vh]">
+
+            <!-- featured -->
+            <section class="featured w-full mb-10 lg:pl-20 ">
+                <div class="flex items-center justify-between px-6 mb-5">
+                    <h2 class="text-2xl md:text-3xl  font-bold">
+                        Featured Playlist
+                    </h2>
+                    <button id="shMoreF"
+                        class="text-base md:text-lg cursor-pointer font-semibold text-gray-300 hover:text-white transition">
+                        Show more
+                    </button>
+                </div>
+                <!-- Swiper -->
+                <div class="swiper  w-[91.5vw] mb-10  h-85 flex ">
+                    <div class="swiper-wrapper musicSwiper">
+                    </div>
+                    <div class="hidden lg:block swiper-button-next"></div>
+                    <div class="hidden lg:block swiper-button-prev"></div>
+                    <div class="swiper-pagination lg:hidden"></div>
+                </div>
+            </section>
+
+            <!--  top hits  -->
+            <section class="topHits w-full mb-10 lg:pl-20 ">
+                <div class="flex  items-center justify-between px-6 mb-5">
+                    <h2 class="text-2xl md:text-3xl  font-bold">
+                        Top Hits
+                    </h2>
+                    <button id="shMoreF"
+                        class="text-base md:text-lg cursor-pointer font-semibold text-gray-300 hover:text-white transition">
+                        Show more
+                    </button>
+                </div>
+                <!-- Swiper -->
+                <div class="swiper   w-[91.5vw] mb-10  h-85 flex ">
+                    <div class="swiper-wrapper musicSwiper">
+                    </div>
+                    <div class="hidden lg:block swiper-button-next"></div>
+                    <div class="hidden lg:block swiper-button-prev"></div>
+                    <div class="swiper-pagination lg:hidden"></div>
+                </div>
+            </section>
+
+            <!-- english hits  -->
+            <section class="englishHits w-full mb-10 lg:pl-20 ">
+                <div class="flex  items-center justify-between px-6 mb-5">
+                    <h2 class="text-2xl md:text-3xl  font-bold">
+                        English Hits
+                    </h2>
+                    <button id="shMoreF"
+                        class="text-base md:text-lg cursor-pointer font-semibold text-gray-300 hover:text-white transition">
+                        Show more
+                    </button>
+                </div>
+                <!-- Swiper -->
+                <div class="swiper   w-[91.5vw] mb-10  h-85 flex ">
+                    <div class="swiper-wrapper musicSwiper">
+                    </div>
+                    <div class="hidden lg:block swiper-button-next"></div>
+                    <div class="hidden lg:block swiper-button-prev"></div>
+                    <div class="swiper-pagination lg:hidden"></div>
+                </div>
+            </section>
+
+            <!-- artits -->
+            <div class="artists-section  h-300 lg:h-auto w-screen overflow-hidden py-8 sm:py-10 lg:py-14">
+
+                <div class="relative mx-auto mb-8 flex items-center justify-center px-5 sm:mb-12 lg:mb-14">
+
+                    <h2
+                        class="text-3xl font-bold tracking-[0.2em] text-white sm:text-4xl sm:tracking-[0.25em] lg:text-5xl">
+                        ARTISTS
+                    </h2>
+
+                    <div class=" right-4 flex gap-2 sm:right-8 md:right-12 lg:right-[8%]">
+                        <button type="button"
+                            class="artists-prev flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/50 transition-all duration-300 hover:border-white/40 hover:bg-white/5 hover:text-white sm:h-10 sm:w-10 lg:h-12 lg:w-12">
+                            ←
+                        </button>
+
+                        <button type="button"
+                            class="artists-next flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/50 transition-all duration-300 hover:border-white/40 hover:bg-white/5 hover:text-white sm:h-10 sm:w-10 lg:h-12 lg:w-12">
+                            →
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- swiper -->
+                <div class="swiper artistsSwiper w-full">
+                    <div class="swiper-wrapper">
+                        <!-- slid 1 -->
+                        <div class="swiper-slide w-full!">
+                            <div
+                                class="mx-auto grid w-full max-w-350 items-center justify-center gap-4 px-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-[400px_360px_400px] lg:gap-0 lg:px-0">
+
+                                <!-- big left -->
+                                <div
+                                    class="mx-auto aspect-square w-[65vw] max-w-90 overflow-hidden rounded-full border border-white/10 sm:w-[40vw] lg:mx-0 lg:w-100 lg:max-w-100">
+                                    <img src="https://c.saavncdn.com/artists/Dua_Lipa_004_20231120090922_500x500.jpg"
+                                        alt="Dua Lipa"
+                                        class="h-full w-full object-cover transition duration-700 hover:scale-105">
+                                </div>
+
+
+                                <!-- small -->
+                                <div class="mx-auto grid grid-cols-2 gap-2 sm:gap-3 lg:gap-0">
+                                    <!-- 1 -->
+                                    <div
+                                        class="aspect-square w-[28vw] max-w-35 overflow-hidden rounded-full border border-white/10 sm:w-[17vw] lg:w-45 lg:max-w-45">
+                                        <img src="https://c.saavncdn.com/artists/Ed_Sheeran_002_20250625073038_500x500.jpg"
+                                            alt="Ed Sheeran"
+                                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                                    </div>
+
+                                    <!-- 2 -->
+                                    <div
+                                        class="aspect-square w-[28vw] max-w-35 overflow-hidden rounded-full border border-white/10 sm:w-[17vw] lg:w-45 lg:max-w-45">
+                                        <img src="https://c.saavncdn.com/artists/Taylor_Swift_003_20200226074119_500x500.jpg"
+                                            alt="Taylor Swift"
+                                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                                    </div>
+
+                                    <!-- 3 -->
+                                    <div
+                                        class="aspect-square w-[28vw] max-w-35 overflow-hidden rounded-full border border-white/10 sm:w-[17vw] lg:w-45 lg:max-w-45">
+                                        <img src="https://c.saavncdn.com/artists/Sabrina_Carpenter_001_20250313025519_500x500.jpg"
+                                            alt="Sabrina Carpenter"
+                                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                                    </div>
+
+                                    <!-- 4 -->
+                                    <div
+                                        class="aspect-square w-[28vw] max-w-35 overflow-hidden rounded-full border border-white/10 sm:w-[17vw] lg:w-45 lg:max-w-45">
+                                        <img src="https://c.saavncdn.com/artists/One_Direction_500x500.jpg"
+                                            alt="One Direction"
+                                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                                    </div>
+
+                                </div>
+
+
+                                <!-- big right -->
+                                <div
+                                    class="mx-auto aspect-square w-[65vw] max-w-90 overflow-hidden rounded-full border border-white/10 sm:col-span-2 sm:w-[40vw] lg:col-span-1 lg:ml-auto lg:w-100 lg:max-w-100">
+                                    <img src="https://c.saavncdn.com/artists/Demi_Lovato_004_20250806082650_500x500.jpg"
+                                        alt="Demi Lovato"
+                                        class="h-full w-full object-cover transition duration-700 hover:scale-105">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- slide 2 -->
+                        <div class="swiper-slide w-full!">
+                            <div
+                                class="mx-auto grid w-full max-w-350 items-center justify-center gap-4 px-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-[400px_360px_400px] lg:gap-0 lg:px-0">
+
+                                <!-- big left -->
+                                <div
+                                    class="mx-auto aspect-square w-[65vw] max-w-90 overflow-hidden rounded-full border border-white/10 sm:w-[40vw] lg:mx-0 lg:w-100">
+                                    <img src="https://c.saavncdn.com/artists/Selena_Gomez_003_20231023065157_500x500.jpg"
+                                        alt="Selena Gomez"
+                                        class="h-full w-full object-cover transition duration-700 hover:scale-105">
+                                </div>
+
+
+                                <!-- small -->
+                                <div class="mx-auto grid grid-cols-2 gap-2 sm:gap-3 lg:gap-0">
+                                    <div
+                                        class="aspect-square w-[28vw] max-w-35 overflow-hidden rounded-full border border-white/10 sm:w-[17vw] lg:w-45">
+                                        <img src="https://c.saavncdn.com/artists/Alan_Walker_003_20231116095443_500x500.jpg"
+                                            alt="Alan Walker" class="h-full w-full object-cover">
+                                    </div>
+
+
+                                    <div
+                                        class="aspect-square w-[28vw] max-w-35 overflow-hidden rounded-full border border-white/10 sm:w-[17vw] lg:w-45">
+                                        <img src="https://c.saavncdn.com/artists/Charlie_Puth_500x500.jpg"
+                                            alt="Charlie Puth" class="h-full w-full object-cover">
+                                    </div>
+
+
+                                    <div
+                                        class="aspect-square w-[28vw] max-w-35 overflow-hidden rounded-full border border-white/10 sm:w-[17vw] lg:w-45">
+                                        <img src="https://c.saavncdn.com/832/This-Is-Acting-Deluxe-Version-English-2016-500x500.jpg"
+                                            alt="Sia" class="h-full w-full object-cover">
+                                    </div>
+
+
+                                    <div
+                                        class="aspect-square w-[28vw] max-w-35 overflow-hidden rounded-full border border-white/10 sm:w-[17vw] lg:w-45">
+                                        <img src="https://c.saavncdn.com/artists/Katy_Perry_004_20200616105931_500x500.jpg"
+                                            alt="Katy Perry" class="h-full w-full object-cover">
+                                    </div>
+                                </div>
+
+                                <!-- big right -->
+                                <div
+                                    class="mx-auto aspect-square w-[65vw] max-w-90 overflow-hidden rounded-full border border-white/10 sm:col-span-2 sm:w-[40vw] lg:col-span-1 lg:ml-auto lg:w-100">
+                                    <img src="https://c.saavncdn.com/artists/Billie_Eilish_20190211151539_500x500.jpg"
+                                        alt="Billie Eilish"
+                                        class="h-full w-full object-cover transition duration-700 hover:scale-105">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- k-pop -->
+            <section class="kpop w-full mb-10 lg:pl-20 ">
+                <div class="flex  items-center justify-between px-6 mb-5">
+                    <h2 class="text-2xl md:text-3xl  font-bold">
+                        K-POP
+                    </h2>
+                </div>
+                <!-- Swiper -->
+                <div class="swiper  w-[91.5vw] mb-10  h-85 flex ">
+                    <div class="swiper-wrapper musicSwiper">
+                    </div>
+                    <div class="hidden lg:block swiper-button-next"></div>
+                    <div class="hidden lg:block swiper-button-prev"></div>
+                    <div class="swiper-pagination lg:hidden"></div>
+                </div>
+            </section>
+
+            <!-- footer  -->
+            <footer class="bg-[#080808] text-white border-t border-white/10 pl-10 pb-30 lg:pb-0">
+
+                <div
+                    class="px-6 sm:px-8 lg:px-12 pt-12 sm:pt-16 lg:pt-20 flex-wrap overflow-hidden  flex justify-between h-auto">
+                    <h2
+                        class="text-[60px] md:text-[100px]  font-black tracking-[-0.06em] text-[#202020] whitespace-nowrap select-none">
+                        Ftm-Dh Music.in
+                    </h2>
+
+                    <!-- Profile Box -->
+                    <div
+                        class="profile-box mt-15 lg:mt-0 mb-15 bg-[#131313]/90  w-67.5 p-5 backdrop-blur-xl border border-white/10 rounded-[18px] shadow-[0_18px_45px_rgba(0,0,0,0.55)] z-40 text-center opacity-0 -translate-y-10 scale-0 transition-all delay-300 duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-white/20 hover:shadow-[0_26px_60px_rgba(0,0,0,0.65)]">
+
+                        <div class="relative w-17 h-17 mx-auto mb-3">
+                            <img src="img/profile.png" alt="My Photo"
+                                class="profile-img w-17 h-17 rounded-full object-cover border-[3px] border-[#131313] outline-2 outline-white/20 shadow-[0_6px_18px_rgba(0,0,0,0.5)]">
+
+                            <span title="Online"
+                                class="absolute bottom-0.5 right-0.5 w-4 h-4 rounded-full bg-[#1ed760] border-[3px] border-[#131313] shadow-[0_0_10px_rgba(30,215,96,0.6)]"></span>
+                        </div>
+
+                        <h3 class="text-[17px] font-extrabold m-0 mb-1 tracking-wide text-white">
+                            Fatemeh Dehghani
+                        </h3>
+
+                        <div
+                            class="profile-role inline-flex items-center gap-2 py-1 pl-3.5 pr-3 rounded-full bg-white/6 border border-white/10 text-white/70 text-[10px] font-bold tracking-[1.2px] uppercase mb-2.5">
+                            Web Developer
+                            <span class="flex items-end gap-0.5 h-2.5" aria-hidden="true">
+                                <span class="eq-bar w-0.5 h-full rounded-full bg-[#1ed760]"></span>
+                                <span class="eq-bar w-0.5 h-full rounded-full bg-[#1ed760]"></span>
+                                <span class="eq-bar w-0.5 h-full rounded-full bg-[#1ed760]"></span>
+                            </span>
+                        </div>
+
+                        <p class="profile-bio text-[11px] leading-[1.6] text-white/45 mb-2.5 px-2">
+                            Hi! I'm a passionate developer who loves creating
+                            interactive web experiences.
+                        </p>
+
+                        <div
+                            class="flex items-center justify-center gap-1.5 mb-3.5 pt-2.5 border-t border-white/[0.07] text-[10px] text-white/35">
+                            <svg class="w-3 h-3 shrink-0 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" />
+                            </svg>
+                            <span class="truncate">late-night code &amp; lofi playlists</span>
+                        </div>
+
+                        <!-- socials -->
+                        <div class="profile-socials flex justify-center gap-4">
+                            <a href="https://github.com/FtmDhn" title="GitHub"
+                                class="text-white/35 no-underline transition-all duration-300 flex items-center justify-center hover:text-white  hover:-translate-y-1">
+                                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+
+                            <a href="https://linkedin.com/in/FatemehDehghani" title="LinkedIn"
+                                class="text-white/35 no-underline transition-all duration-300 flex items-center justify-center hover:text-white hover:-translate-y-1">
+
+                                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </a>
+
+                            <a href="https://instagram.com/ftm.dehgni" title="Instagram"
+                                class="text-white/35 no-underline transition-all duration-300 flex items-center justify-center hover:text-white hover:-translate-y-1">
+
+                                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.924 3 .419-1.796 2.245-2.838 3.823-2.291.812.281 1.442.892 1.733 1.682.703-.137 1.363-.375 1.977-.711-.233.719-.726 1.322-1.369 1.704.629-.651.949-1.219 1.559-1.674z" />
+                                </svg>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- footer content -->
+                <div class="border-t border-white/10">
+                    <div class="max-w-[1800px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-14 sm:py-16 lg:py-20">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12 lg:gap-x-16">
+
+                            <div class="max-w-sm">
+                                <h3 class="text-xl font-bold mb-5">
+                                    ListenFree
+                                </h3>
+                                <p class=" leading-7 sm:leading-8 text-[#d4d4d4]">
+                                    Fast, privacy-respecting music streaming with offline
+                                    support, collaborative rooms, enhanced video previews
+                                    and smart playlists.
+                                </p>
+                            </div>
+
+
+                            <div>
+                                <h3 class="text-xl  font-bold mb-5"> Platform </h3>
+                                <ul class="space-y-3">
+                                    <li>
+                                        <a href="#"
+                                            class=" text-[#d4d4d4] hover:text-white transition-colors duration-200">
+                                            How It Works
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#"
+                                            class=" text-[#d4d4d4] hover:text-white transition-colors duration-200">
+                                            Features
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#"
+                                            class=" text-[#d4d4d4] hover:text-white transition-colors duration-200">
+                                            FAQ
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#"
+                                            class=" text-[#d4d4d4] hover:text-white transition-colors duration-200">
+                                            Blog
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div>
+                                <h3 class="text-xl  font-bold mb-5"> Company & Legal </h3>
+                                <ul class="space-y-3">
+                                    <li>
+                                        <a href="#"
+                                            class=" text-[#d4d4d4] hover:text-white transition-colors duration-200">
+                                            About
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#"
+                                            class=" text-[#d4d4d4] hover:text-white transition-colors duration-200">
+                                            Contact
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#"
+                                            class=" text-[#d4d4d4] hover:text-white transition-colors duration-200">
+                                            Privacy Policy
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#"
+                                            class=" text-[#d4d4d4] hover:text-white transition-colors duration-200">
+                                            Terms of Service
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#"
+                                            class=" text-[#d4d4d4] hover:text-white transition-colors duration-200">
+                                            Cookie Policy
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#"
+                                            class=" text-[#d4d4d4] hover:text-white transition-colors duration-200">
+                                            DMCA
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#"
+                                            class=" text-[#d4d4d4] hover:text-white transition-colors duration-200">
+                                            Disclaimer
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div>
+                                <h3 class="text-xl  font-bold mb-5">Stay Updated</h3>
+
+                                <p class=" leading-7 text-[#d4d4d4] max-w-sm mb-5">
+                                    Join our socials for updates, changelogs and roadmap
+                                    polls.
+                                </p>
+
+                                <a href="https://github.com/FtmDhn"
+                                    class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#292929] font-medium hover:bg-[#353535] transition-colors duration-200">
+                                    Visit Social Hub
+                                </a>
+
+                                <p class="mt-9 text-sm  text-[#888888]">
+                                    © 2026 ListenFree. All rights reserved.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </section>
+
+    </main>
+
+    <!-- show more featured -->
+    <section class="show-more-ftur w-full fixed top-full transition-all duration-300 p-1 z-91  ">
+        <div
+            class="relative mx-auto  overflow-hidden rounded-tl-[28px] rounded-tr-[28px] border border-white/5 bg-[#0d0d14] ">
+
+            <div class="flex items-center justify-between border-b border-white/10 px-4 py-4 sm:px-8 sm:py-6">
+                <div>
+                    <p class="mb-1 text-xs font-medium tracking-[0.45em] text-gray-500 sm:text-sm">
+                        SHOW MORE
+                    </p>
+                    <h2 class="text-xl font-bold text-gray-200 sm:text-2xl">
+                        Featured Playlist
+                    </h2>
+                </div>
+
+                <button id="closeShow"
+                    class="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-xl font-light text-gray-300 transition hover:bg-white/10 hover:text-white sm:h-12 sm:w-12 sm:text-3xl cursor-pointer">
+                    ×
+                </button>
+            </div>
+
+            <!-- music grid -->
+            <div id="featurGrid"
+                class="grid max-h-[calc(100vh-95px)] lg:max-h-[calc(100vh-130px)] w-full grid-cols-1 overflow-y-auto px-4 py-2 sm:grid-cols-3 sm:gap-x-8 sm:gap-y-7 sm:px-8 sm:py-3 lg:grid-cols-4 xl:grid-cols-5  scrollbar-hide ">
+            </div>
+        </div>
+    </section>
+
+    <!--  music player -->
+    <section id="playMusic"
+        class=" fixed bottom-12.5 lg:bottom-0  left-0 z-9999 flex h-0 overflow-hidden transition-all duration-300  w-full items-center justify-between border-t border-white/10  px-3 text-white  bg-center bg-cover ">
+
+        <!-- Background -->
+        <div id="player-bg"
+            class="absolute inset-0 -z-10 bg-cover bg-center bg-[#0000008c] backdrop-blur-[64px] scale-110"></div>
+
+        <!-- Progress Bar -->
+        <div id="progress"
+            class="group absolute top-0 h-0.5 w-full cursor-pointer bg-[#b3b9c1] hover:h-1 transition-all duration-300">
+            <span id="progressFill" class="absolute top-0 left-0 h-full w-0 bg-white">
+                <button
+                    class="absolute -right-1.5 top-1/2 hidden h-3.25 w-3.25 translate-y-[-50%] rounded-full bg-white group-hover:block transition-all duration-300 cursor-pointer"></button>
+            </span>
+        </div>
+
+        <!-- Audio -->
+        <audio id="myAudio" src=""></audio>
+
+        <div class="flex min-w-0 items-center gap-3">
+
+            <!-- Cover -->
+            <div class="cursor-pointer h-12 w-12  shrink-0   overflow-hidden rounded-lg">
+                <img id="img-player" src="" alt="" class="h-full rounded-lg w-full object-cover">
+            </div>
+
+            <!-- Song Details -->
+            <div class=" w-[40%] md:w-auto ">
+                <p id="artist-name-player"
+                    class="truncate hidden sm:block md:text-[11px] text-[8px]  font-medium tracking-[0.3em] text-gray-400">
+                </p>
+
+                <h3 id="song-name-player"
+                    class="truncate hidden sm:block md:text-xl text-lg font-bold  leading-6 text-gray-300">
+                </h3>
+            </div>
+        </div>
+
+        <div class="absolute left-1/2 flex -translate-x-1/2 items-center gap-5">
+            <!-- Shuffle -->
+            <button onclick="_shuffle(this)" class="cursor-pointer  transition hover:text-gray-400 " title="Shuffle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffff" viewBox="0 0 24 24">
+                    <path
+                        d="M18 6h-2.59c-.53 0-1.04.21-1.41.59L4.59 16H2v2h2.59c.53 0 1.04-.21 1.41-.59L15.41 8H18v3l4-4-4-4z">
+                    </path>
+                    <path
+                        d="M18 16h-1.59l-2.71-2.71-1.41 1.41L15 17.41c.37.37.89.59 1.41.59H18v3l4-4-4-4zM7.29 9.71 8.7 8.3 6.99 6.59C6.62 6.22 6.1 6 5.58 6H1.99v2h3.59z">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Previous -->
+            <button id="preMu" class="cursor-pointer transition hover:text-gray-400" title="Previous">
+                <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 5h2v14H6V5zm3 7 10-7v14L9 12z" />
+                </svg>
+            </button>
+
+            <!-- Play / Pause -->
+            <button id="playButton"
+                class="cursor-pointer flex h-11 w-11 items-center justify-center rounded-full bg-white text-black transition hover:scale-105">
+                <svg id="playIcon" class="ml-0.5 h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7L8 5z" />
+                </svg>
+            </button>
+
+            <!-- Next -->
+            <button id="nextMu" class="cursor-pointer transition hover:text-gray-400" title="Next">
+                <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M16 5h2v14h-2V5zM5 5l10 7-10 7V5z" />
+                </svg>
+            </button>
+
+
+            <!-- Like -->
+            <button id="mylike" onclick="likeSong(this)" class="cursor-pointer  transition hover:text-gray-400 "
+                title="Like">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+                </svg>
+            </button>
+
+        </div>
+
+
+        <div class="ml-auto flex items-center gap-5">
+            <!--  Repeat -->
+            <button onclick="songRepeat(this)" class=" text-[#f0b100] transition cursor-pointer hover:text-[#f0b000a5] "
+                title="Repeat">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M17 2l4 4-4 4M3 11V9a3 3 0 013-3h15M7 22l-4-4 4-4m14-1v2a3 3 0 01-3 3H3" />
+                </svg>
+            </button>
+
+            <!-- volume change -->
+            <div class="group  relative flex items-center">
+                <button id="volumeButton" class="flex h-6 w-6 cursor-pointer items-center justify-center rounded-full
+               text-gray-300 transition hover:bg-white/10 hover:text-white">
+
+                    <svg id="volumeIcon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H3v6h3l5 4V5z" />
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.5 8.5a5 5 0 010 7M18 5.5a9 9 0 010 13" />
+                    </svg>
+                </button>
+
+                <div class="absolute right-0 bottom-3  mb-3 hidden
+               w-32 rounded-xl border border-white/10
+               bg-[#111]/95 px-3 py-3 shadow-2xl
+               backdrop-blur-xl group-hover:block">
+                    <div id="volumeBox" class="flex items-center gap-2">
+                        <div class="volumeSvg">
+                            <svg id="volumeIcon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H3v6h3l5 4V5z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.5 8.5a5 5 0 010 7M18 5.5a9 9 0 010 13" />
+                            </svg>
+                        </div>
+
+                        <input id="volumeSlider" type="range" min="0" max="1" value="0.5" step="0.01"
+                            class="volume-range w-full cursor-pointer" />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  Library -->
+    <section id="songLibrary"
+        class="fixed bottom-0 left-0 translate-y-full transition-all duration-500 z-40 flex lg:h-[calc(100%-140px)] w-full flex-col items-center bg-[#080808] px-4 py-5 sm:px-6 sm:py-7 lg:left-20 lg:w-[calc(100%-5rem)] xl:justify-start">
+
+        <div class=" px-3 w-full xl:container">
+            <h1 class="mb-7 text-2xl font-bold text-white select-none sm:mb-10 sm:text-3xl">
+                Your Library
+            </h1>
+
+            <div onclick="showFav()"
+                class="group flex h-17.5 w-full  cursor-pointer items-center justify-between rounded-xl bg-[#e2e5e9] px-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-[#d8c7ff] hover:shadow-lg hover:shadow-purple-500/10">
+                <h2
+                    class="text-2xl font-medium text-[#111827] transition-colors duration-300 group-hover:text-purple-950">
+                    Favorites </h2>
+
+                <svg class="h-7 w-7 scale-90 text-purple-900 opacity-0
+               transition-all duration-300
+               group-hover:scale-100 group-hover:opacity-100" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 21s-7-4.35-9.33-8.28C.5 9.4 2.24 5 6.5 5c2.04 0 3.36 1.16 4.5 2.54C12.64 6.16 13.96 5 16 5c4.26 0 6 4.4 3.83 7.72C19 16.65 12 21 12 21z" />
+                </svg>
+            </div>
+
+        </div>
+
+        <!-- fav sec -->
+        <section id="favSec"
+            class="flex w-full opacity-0 h-50 flex-col gap-4 xl:container  p-3 transition-all duration-300 md:flex-row md:flex-wrap scrollbar-hide overflow-scroll ">
+        </section>
+    </section>
+
+    <!-- search  -->
+    <section id="searchLibrary"
+        class="fixed top-0 left-0  translate-y-full transition-all duration-500 z-40 flex h-full w-full! justify-center bg-[#080808]  px-20 py-5 sm:px-6 sm:py-7 lg:px-40   ">
+
+        <div class=" w-full h-full xl:container">
+            <h1 class="max-w-125 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl">
+                Recommended <br>
+                For You Today
+            </h1>
+
+
+            <div class="relative mt-10 w-full">
+
+                <svg class="absolute left-5 top-8 h-7 w-7 -translate-y-1/2 text-[#91a4c2]" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m21 21-4.35-4.35m2.1-5.4a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" />
+                </svg>
+
+                <!-- Input -->
+                <input type="text" placeholder="search"
+                    class="h-17 w-full rounded-full bg-[#1b1b1b] pl-17 pr-6 text-xl text-white outline-none transition-all duration-300 focus:bg-[#202020] focus:ring-1 focus:ring-[#91a4c2]/40" />
+
+                <section id="searchSec"
+                    class="flex w-full   flex-col gap-4 xl:container  p-3 transition-all duration-300 md:flex-row md:flex-wrap h-[55vh] overflow-y-scroll scrollbar-hide ">
+                </section>
+            </div>
+        </div>
+    </section>
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
+
+</html>

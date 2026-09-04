@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollbar-show::-webkit-scrollbar {
+    display: block;
+}
+
+.scrollbar-show {
+    -ms-overflow-style: initial;
+    scrollbar-width: initial;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: white;
+}
+
+@media (min-width:1024px) {
+
+    .swiper-button-prev {
+        top: 10px;
+        left: 20%;
+        right: auto;
+        transform: translateX(-20%) rotate(0deg);
+        display: block;
+    }
+
+    .swiper-button-next {
+        top: auto;
+        bottom: 10px;
+        right: 0;
+        right: auto;
+        transform: rotate(0deg);
+        display: block;
+    }
+}
+
+@media (max-width:1024px) {
+
+    .swiper-button-prev {
+        display: none;
+    }
+
+    .swiper-button-next {
+        display: none;
+    }
+}
+
+.volume-range {
+    appearance: none;
+    height: 3px;
+    border-radius: 999px;
+    background: #3b3b3b;
+    outline: none;
+}
+
+.volume-range::-webkit-slider-thumb {
+    appearance: none;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+.volume-range::-moz-range-thumb {
+    width: 11px;
+    height: 11px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+#featurGrid>div {
+    &:last-of-type {
+        padding-bottom: 70px;
+    }
+}
+
+    @keyframes eqBounce {
+        0%, 100% { transform: scaleY(0.25); }
+        50%      { transform: scaleY(1); }
+    }
+    .eq-bar {
+        transform-origin: bottom;
+        animation: eqBounce 0.9s ease-in-out infinite;
+    }
+    .eq-bar:nth-child(2) { animation-delay: 0.25s; }
+    .eq-bar:nth-child(3) { animation-delay: 0.5s; }
+
+.profile-box.scrolled{opacity: 1; transform: translateY(40px); scale: 1;}
