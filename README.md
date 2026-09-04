@@ -63,11 +63,8 @@ Future updates will include:
 ## 🎬 Preview
 
 **Live Demo:**  
-[Click here to experience Ftm-Dh Music](https://ftm-dh-music.vercel.app/)
+[Click here to experience Ftm-Dh Music](https://ftm-dh-music.vercel.app/)  
 [support link](https://ftmdhn.github.io/ftm-dh-music/)
-
-**Repository:**  
-[View the project on GitHub](YOUR-GITHUB-REPOSITORY-LINK)
 
 ### Screenshot
 
